@@ -13,3 +13,4 @@ Feature: category filter
       | category |
       |Men’s Shoes  (1)|
       |Women’s Shoes  (1)|
+      |Men’s Shirts  (1)    |

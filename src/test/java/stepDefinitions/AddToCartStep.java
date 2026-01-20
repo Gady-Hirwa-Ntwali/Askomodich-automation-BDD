@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 
 public class AddToCartStep {
     WebDriver driver;
-    @Given("I'm on the store/product page")
+    @Given("I am on the store/product page")
     public void imOnTheStorePage() {
         driver = DriverFactory.getDriver();
         new StorePage(driver).load(EndPoints.store);

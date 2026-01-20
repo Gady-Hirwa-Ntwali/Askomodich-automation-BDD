@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class StorePage extends BasePage {
     @FindBy(css = "a.added_to_cart.wc-forward") private WebElement viewCartLink;
@@ -38,4 +39,19 @@ public class StorePage extends BasePage {
         System.out.println("Category selected is " + driver.findElement(By.cssSelector(".woocommerce-products-header h1")).getText());
 
     }
+
+    public void enterProduct(String searchField){
+        driver.findElement(By.id("woocommerce-product-search-field-0")).sendKeys(searchField);
+    }
+
+    public void clickSearch(){
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
+    }
+
+    public void searchResult(String searchField){
+        String result = driver.findElement(By.cssSelector(".woocommerce-products-header h1")).getText();
+        System.out.println(result);
+        assertTrue(result.contains(searchField));
+    }
 }
+

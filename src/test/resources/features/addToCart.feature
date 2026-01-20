@@ -5,7 +5,7 @@ Feature: add to cart feature
 
   Rule: Add product from store
   Scenario Outline: Add one quantity to cart
-    Given I'm on the store page
+    Given I am on the store page
     When I add <productName> to the cart
     Then I see 1 <productName> in the cart
      #And I see 2 products in the cart
