@@ -15,3 +15,15 @@ Feature: search for products
     |shirt|
     |shoes|
     |Bracelet|
+
+    @invalidProducts
+  Scenario Outline: search for a product that are not in store
+    Given I am on the store page
+    When I enter <productName> in the search field
+    And I click on the search button
+    Then I should see only  <productName> on the storePage
+
+    Examples:
+    |productName|
+    |guns|
+    |watches|

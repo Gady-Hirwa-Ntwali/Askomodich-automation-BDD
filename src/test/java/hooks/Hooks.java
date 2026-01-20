@@ -17,8 +17,7 @@ public class Hooks {
 
     }
     @After
-    public void after(Scenario scenario) throws InterruptedException {
-        Thread.sleep(5000);
+    public void after(Scenario scenario) {
         //driver.quit();
         System.out.println("End scenario");
         System.out.println("The scenario status" + scenario.getStatus());

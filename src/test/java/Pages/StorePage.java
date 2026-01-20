@@ -49,9 +49,17 @@ public class StorePage extends BasePage {
     }
 
     public void searchResult(String searchField){
+        String productNotFound = driver.findElement(By.cssSelector("#main > div > p")).getText();
         String result = driver.findElement(By.cssSelector(".woocommerce-products-header h1")).getText();
         System.out.println(result);
         assertTrue(result.contains(searchField));
+
+        if(productNotFound.isEmpty()){
+            System.out.println(result);
+        }else{
+            System.out.println(productNotFound);
+        }
     }
+
 }
 
